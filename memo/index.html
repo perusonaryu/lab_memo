@@ -53,13 +53,17 @@ for(let i=0; i<localStorage.length; i++){
 
 
 
+
+//個別削除のコード⤵︎
 $(".delete").on("click",function(){
+    //見た目を消す↓
     const oya = $(this).parents("tr");
     oya.addClass("kesu");
     if(oya.hasClass("kesu")){
         oya.remove();
     }
-    // const oya2 = $(this).parents("th").html();
+
+    //localstrageのデータを消す↓
     const oya2 = $(this).parents("tr").find("th").html();
     localStorage.removeItem(oya2);
 });
